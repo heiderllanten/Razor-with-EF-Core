@@ -145,3 +145,9 @@ Detached: The entity isn't being tracked by the database context.
 In a desktop app, state changes are typically set automatically. An entity is read, changes are made, and the entity state is automatically changed to Modified. Calling SaveChanges generates a SQL UPDATE statement that updates only the changed properties.
 
 In a web app, the DbContext that reads an entity and displays the data is disposed after a page is rendered. When a page's OnPostAsync method is called, a new web request is made and with a new instance of the DbContext. Rereading the entity in that new context simulates desktop processing.
+
+## Sort, filter, page and group
+
+### Use dynamic LINQ to simplify code
+
+The third tutorial in this series shows how to write LINQ code by hard-coding column names in a switch statement. With two columns to choose from, this works fine, but if you have many columns the code could get verbose. To solve that problem, you can use the 'EF.Property' method to specify the name of the property as a string. To try out this approach, replace the Index method in the StudentsController with the following code.
