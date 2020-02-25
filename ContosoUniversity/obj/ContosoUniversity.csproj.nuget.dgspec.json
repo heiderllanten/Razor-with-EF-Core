@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\Studying\\.Net Core\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj": {}
+    "C:\\Users\\Heider\\source\\repos\\Studying\\Razor\\Razor-with-EF-Core\\ContosoUniversity\\ContosoUniversity.csproj": {}
   },
   "projects": {
-    "C:\\repos\\Studying\\.Net Core\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj": {
+    "C:\\Users\\Heider\\source\\repos\\Studying\\Razor\\Razor-with-EF-Core\\ContosoUniversity\\ContosoUniversity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\Studying\\.Net Core\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
+        "projectUniqueName": "C:\\Users\\Heider\\source\\repos\\Studying\\Razor\\Razor-with-EF-Core\\ContosoUniversity\\ContosoUniversity.csproj",
         "projectName": "ContosoUniversity",
-        "projectPath": "C:\\repos\\Studying\\.Net Core\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
-        "packagesPath": "C:\\Users\\hllanten\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\Studying\\.Net Core\\ContosoUniversity\\ContosoUniversity\\obj\\",
+        "projectPath": "C:\\Users\\Heider\\source\\repos\\Studying\\Razor\\Razor-with-EF-Core\\ContosoUniversity\\ContosoUniversity.csproj",
+        "packagesPath": "C:\\Users\\Heider\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Heider\\source\\repos\\Studying\\Razor\\Razor-with-EF-Core\\ContosoUniversity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\hllanten\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Heider\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,26 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
