@@ -151,3 +151,22 @@ In a web app, the DbContext that reads an entity and displays the data is dispos
 ### Use dynamic LINQ to simplify code
 
 The third tutorial in this series shows how to write LINQ code by hard-coding column names in a switch statement. With two columns to choose from, this works fine, but if you have many columns the code could get verbose. To solve that problem, you can use the 'EF.Property' method to specify the name of the property as a string. To try out this approach, replace the Index method in the StudentsController with the following code.
+
+### IQueryable vs. IEnumerable
+
+The code calls the Where method on an IQueryable object, and the filter is processed on the server. In some scenarios, the app might be calling the Where method as an extension method on an in-memory collection. For example, suppose _context.Students changes from EF Core DbSet to a repository method that returns an IEnumerable collection. The result would normally be the same but in some cases may be different.
+
+For example, the .NET Framework implementation of Contains performs a case-sensitive comparison by default. In SQL Server, Contains case-sensitivity is determined by the collation setting of the SQL Server instance. SQL Server defaults to case-insensitive. SQLite defaults to case-sensitive. ToUpper could be called to make the test explicitly case-insensitive:
+
+When Contains is called on an IEnumerable collection, the .NET Core implementation is used. 
+When Contains is called on an IQueryable object, the database implementation is used.
+
+Calling Contains on an IQueryable is usually preferable for performance reasons. With IQueryable, the filtering is done by the database server. If an IEnumerable is created first, all the rows have to be returned from the database server.
+
+There's a performance penalty for calling ToUpper. The ToUpper code adds a function in the WHERE clause of the TSQL SELECT statement. The added function prevents the optimizer from using an index. Given that SQL is installed as case-insensitive, it's best to avoid the ToUpper call when it's not needed.
+
+### Update the Razor page
+
+The preceding code uses the '<form>' tag helper to add the search text box and button. By default, the '<form>' tag helper submits form data with a POST. With POST, the parameters are passed in the HTTP message body and not in the URL. When HTTP GET is used, the form data is passed in the URL as query strings. 
+
+The null-coalescing operator defines a default value for a nullable type. The expression '(pageIndex ?? 1)' means return the value of 'pageIndex' if it has a value. If 'pageIndex' doesn't have a value, return 1.
