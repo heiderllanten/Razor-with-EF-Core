@@ -214,3 +214,51 @@ Database migration should be done as part of deployment, and in a controlled way
 
 - Using migrations to create SQL scripts and using the SQL scripts in deployment.
 - Running dotnet ef database update from a controlled environment.
+
+## Create a complex data model
+
+### The DataType attribute
+
+The DataType attribute specifies a data type that's more specific than the database intrinsic type. In this case only the date should be displayed, not the date and time. The DataType Enumeration provides for many data types, such as Date, Time, PhoneNumber, Currency, EmailAddress, etc. The DataType attribute can also enable the app to automatically provide type-specific features. For example:
+
+- The mailto: link is automatically created for DataType.EmailAddress.
+- The date selector is provided for DataType.Date in most browsers.
+
+The DataType attribute emits HTML 5 data- (pronounced data dash) attributes. The DataType attributes don't provide validation.
+
+### The DisplayFormat attribute
+
+DataType.Date doesn't specify the format of the date that's displayed. By default, the date field is displayed according to the default formats based on the server's CultureInfo.
+
+The DisplayFormat attribute is used to explicitly specify the date format. The ApplyFormatInEditMode setting specifies that the formatting should also be applied to the edit UI. Some fields shouldn't use ApplyFormatInEditMode. For example, the currency symbol should generally not be displayed in an edit text box.
+
+The DisplayFormat attribute can be used by itself. It's generally a good idea to use the DataType attribute with the DisplayFormat attribute. The DataType attribute conveys the semantics of the data as opposed to how to render it on a screen. The DataType attribute provides the following benefits that are not available in DisplayFormat:
+
+- The browser can enable HTML5 features. For example, show a calendar control, the locale-appropriate currency symbol, email links, and client-side input validation.
+- By default, the browser renders data using the correct format based on the locale.
+
+### The DisplayFormat attribute
+
+Data validation rules and validation error messages can be specified with attributes. The StringLength attribute specifies the minimum and maximum length of characters that are allowed in a data field. The code shown limits names to no more than 50 characters. An example that sets the minimum string length is shown later.
+
+The StringLength attribute also provides client-side and server-side validation. The minimum value has no impact on the database schema.
+
+The StringLength attribute doesn't prevent a user from entering white space for a name. The RegularExpression attribute can be used to apply restrictions to the input. 
+
+### The Column attribute
+
+Attributes can control how classes and properties are mapped to the database. In the Student model, the Column attribute is used to map the name of the FirstMidName property to "FirstName" in the database.
+
+When the database is created, property names on the model are used for column names (except when the Column attribute is used). The Student model uses FirstMidName for the first-name field because the field might also contain a middle name.
+
+With the [Column] attribute, Student.FirstMidName in the data model maps to the FirstName column of the Student table. The addition of the Column attribute changes the model backing the SchoolContext. The model backing the SchoolContext no longer matches the database. That discrepancy will be resolved by adding a migration later in this tutorial.
+
+### The Required attribute
+
+The Required attribute makes the name properties required fields. The Required attribute isn't needed for non-nullable types such as value types (for example, DateTime, int, and double). Types that can't be null are automatically treated as required fields.
+
+The Required attribute must be used with MinimumLength for the MinimumLength to be enforced.
+
+### The Display attribute
+
+The Display attribute specifies that the caption for the text boxes should be "First Name", "Last Name", "Full Name", and "Enrollment Date." The default captions had no space dividing the words, for example "Lastname."
