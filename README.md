@@ -315,3 +315,24 @@ Some of the attributes used in this tutorial are used for:
 - EF Core configuration only (for example, HasKey).
 
 Validation and EF Core configuration (for example, [StringLength(50)]).
+
+## Read related data
+
+### Eager, explicit, and lazy loading
+
+There are several ways that EF Core can load related data into the navigation properties of an entity:
+
+- Eager loading. Eager loading is when a query for one type of entity also loads related entities. When an entity is read, its related data is retrieved. This typically results in a single join query that retrieves all of the data that's needed. EF Core will issue multiple queries for some types of eager loading. Issuing multiple queries can be more efficient than a giant single query. Eager loading is specified with the Include and ThenInclude methods.
+
+    Eager loading sends multiple queries when a collection navigation is included:
+
+    - One query for the main query
+    - One query for each collection "edge" in the load tree.
+
+- Separate queries with Load: The data can be retrieved in separate queries, and EF Core "fixes up" the navigation properties. "Fixes up" means that EF Core automatically populates the navigation properties. Separate queries with Load is more like explicit loading than eager loading.
+
+    Note: EF Core automatically fixes up navigation properties to any other entities that were previously loaded into the context instance. Even if the data for a navigation property is not explicitly included, the property may still be populated if some or all of the related entities were previously loaded.
+
+- Explicit loading. When the entity is first read, related data isn't retrieved. Code must be written to retrieve the related data when it's needed. Explicit loading with separate queries results in multiple queries sent to the database. With explicit loading, the code specifies the navigation properties to be loaded. Use the Load method to do explicit loading. For example:
+
+- Lazy loading. Lazy loading was added to EF Core in version 2.1. When the entity is first read, related data isn't retrieved. The first time a navigation property is accessed, the data required for that navigation property is automatically retrieved. A query is sent to the database each time a navigation property is accessed for the first time.
