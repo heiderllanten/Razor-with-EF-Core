@@ -325,3 +325,4 @@ C:\repos\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcor
 C:\repos\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.dll
 C:\repos\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.pdb
 C:\repos\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.csprojAssemblyReference.cache
+C:\Users\Heider\source\repos\Studying\Razor\Razor-with-EF-Core\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Pages\About.cshtml.g.cs
