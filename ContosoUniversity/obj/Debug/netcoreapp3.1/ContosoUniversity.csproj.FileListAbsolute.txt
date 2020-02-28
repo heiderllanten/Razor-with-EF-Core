@@ -466,7 +466,6 @@ C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\bin\Debug\netcoreapp3.
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.csprojAssemblyReference.cache
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\staticwebassets\ContosoUniversity.StaticWebAssets.Manifest.cache
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\staticwebassets\ContosoUniversity.StaticWebAssets.xml
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.MvcApplicationPartsAssemblyInfo.cache
@@ -501,3 +500,8 @@ C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.csproj.CopyComplete
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.dll
 C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.pdb
+C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Pages\Instructors\Create.cshtml.g.cs
+C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Pages\Instructors\Delete.cshtml.g.cs
+C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Pages\Instructors\Details.cshtml.g.cs
+C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Pages\Instructors\Edit.cshtml.g.cs
+C:\Studying\.Net Core\ContosoUniversity\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Pages\Instructors\Index.cshtml.g.cs
