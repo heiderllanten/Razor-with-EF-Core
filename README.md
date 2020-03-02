@@ -336,3 +336,33 @@ There are several ways that EF Core can load related data into the navigation pr
 - Explicit loading. When the entity is first read, related data isn't retrieved. Code must be written to retrieve the related data when it's needed. Explicit loading with separate queries results in multiple queries sent to the database. With explicit loading, the code specifies the navigation properties to be loaded. Use the Load method to do explicit loading. For example:
 
 - Lazy loading. Lazy loading was added to EF Core in version 2.1. When the entity is first read, related data isn't retrieved. The first time a navigation property is accessed, the data required for that navigation property is automatically retrieved. A query is sent to the database each time a navigation property is accessed for the first time.
+
+## Passing data to views
+
+Pass data to views using several approaches:
+
+- Strongly typed data: viewmodel
+- Weakly typed data
+    - ViewData (ViewDataAttribute)
+    - ViewBag
+
+### Summary of the differences between ViewData and ViewBag
+
+ViewBag isn't available in the Razor Pages.
+
+- ViewData
+    - Derives from ViewDataDictionary, so it has dictionary properties that can be useful, such as ContainsKey, Add, Remove, and Clear.
+    - Keys in the dictionary are strings, so whitespace is allowed. Example: ViewData["Some Key With Whitespace"]
+    - Any type other than a string must be cast in the view to use ViewData.
+
+- ViewBag
+    - Derives from DynamicViewData, so it allows the creation of dynamic properties using dot notation (@ViewBag.SomeKey = <value or object>), and no casting is required. The syntax of ViewBag makes it quicker to add to controllers and views.
+    - Simpler to check for null values. Example: @ViewBag.Person?.Name
+
+### What are Tag Helpers
+
+Tag Helpers enable server-side code to participate in creating and rendering HTML elements in Razor files.
+
+### Update the Course Edit Razor page
+
+The page contains a hidden field (<input type="hidden">) for the course number. Adding a <label> tag helper with asp-for="Course.CourseID" doesn't eliminate the need for the hidden field. <input type="hidden"> is required for the course number to be included in the posted data when the user clicks Save.
