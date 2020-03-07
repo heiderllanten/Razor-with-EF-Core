@@ -132,15 +132,11 @@ The database context keeps track of whether entities in memory are in sync with 
 
 An entity may be in one of the following states:
 
-Added: The entity doesn't yet exist in the database. The SaveChanges method issues an INSERT statement.
-
-Unchanged: No changes need to be saved with this entity. An entity has this status when it's read from the database.
-
-Modified: Some or all of the entity's property values have been modified. The SaveChanges method issues an UPDATE statement.
-
-Deleted: The entity has been marked for deletion. The SaveChanges method issues a DELETE statement.
-
-Detached: The entity isn't being tracked by the database context.
+- Added: The entity doesn't yet exist in the database. The SaveChanges method issues an INSERT statement.
+- Unchanged: No changes need to be saved with this entity. An entity has this status when it's read from the database.
+- Modified: Some or all of the entity's property values have been modified. The SaveChanges method issues an UPDATE statement.
+- Deleted: The entity has been marked for deletion. The SaveChanges method issues a DELETE statement.
+- Detached: The entity isn't being tracked by the database context.
 
 In a desktop app, state changes are typically set automatically. An entity is read, changes are made, and the entity state is automatically changed to Modified. Calling SaveChanges generates a SQL UPDATE statement that updates only the changed properties.
 
